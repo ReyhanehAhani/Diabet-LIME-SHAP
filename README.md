@@ -27,3 +27,5 @@ bash papermill/run_papermill.sh
 ```
 
 to materialize timestamped executed notebooks under `papermill/reports/` (ignored by git) for reproducible CV screenshots.
+
+**Checked-in proof run:** `papermill/published/diabet_xai_snapshot_executed.html` (+ matching `.ipynb`) — open the HTML in any browser to see SHAP output from a parameterized run.
