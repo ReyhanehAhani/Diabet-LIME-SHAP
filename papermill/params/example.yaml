@@ -1,0 +1,3 @@
+random_state: 42
+max_samples: 400
+model_n_estimators: 120

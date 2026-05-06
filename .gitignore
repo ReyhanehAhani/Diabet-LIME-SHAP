@@ -1,0 +1,2 @@
+papermill/reports/*.ipynb
+!papermill/reports/.gitkeep

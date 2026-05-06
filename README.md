@@ -16,3 +16,14 @@ Ensure the following Python packages are installed to run this notebook:
 Install these packages via pip:
 ```bash
 pip install pandas seaborn matplotlib lime shap keras numpy
+```
+
+## Portfolio — Pillar 2 (Papermill)
+
+A compact `RandomForest + SHAP` notebook lives in `papermill/notebooks/diabet_xai_snapshot.ipynb`. After `pip install -r papermill/requirements-papermill.txt`, run:
+
+```bash
+bash papermill/run_papermill.sh
+```
+
+to materialize timestamped executed notebooks under `papermill/reports/` (ignored by git) for reproducible CV screenshots.
