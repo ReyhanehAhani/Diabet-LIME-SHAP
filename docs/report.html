@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/>
+<title>Diabetes DS report</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:780px;margin:2rem auto;padding:0 1rem;line-height:1.55}
+pre{background:#f5f9fc;padding:1rem;border-radius:8px;overflow:auto;font-size:0.82rem}
+a{color:#2b7fd4}
+</style></head><body>
+<p><a href="index.html">← Hub</a> · <a href="papermill_snapshot.html">SHAP snapshot (Papermill)</a></p>
+<h1>Diabet project — analyst + modeling snapshot</h1>
+<h2>Data quality</h2>
+<p>`analytics/quality/validate_sklearn_diabetes.py` sanity-checks the built-in UCI-style diabetes bundle.</p>
+<h2>Modeling</h2>
+<p>`modeling/baseline_compare.py` compares **OLS + scaling**, **Ridge**, and **RandomForest** regressors with:</p>
+<ul><li>MAE / R² on holdout  </li><li>Prediction vs actual plot  </li><li>Residual histogram  </li><li>Permutation importance + **worst-predictions** slice for manual error analysis</li></ul>
+<p>Artifacts land in `modeling/artifacts/`.</p>
+<h2>Papermill + HTML</h2>
+<p>The deeper **SHAP** story remains in `papermill/published/*.html`.</p>
+<p>Run:</p>
+<pre>```bash
+pip install -r requirements-analytics-stack.txt
+python analytics/quality/validate_sklearn_diabetes.py
+python modeling/baseline_compare.py
+```
+</pre><h2>Artifacts</h2><ul><li><a href="../modeling/artifacts/metrics.json">metrics.json</a></li><li><a href="../modeling/artifacts/pred_vs_actual.png">pred_vs_actual.png</a></li><li><a href="../modeling/artifacts/residual_hist.png">residual_hist.png</a></li><li><a href="../modeling/artifacts/permutation_importance.png">permutation_importance.png</a></li><li><a href="../modeling/artifacts/worst_predictions.csv">worst_predictions.csv</a></li></ul>
+</body></html>

@@ -1,0 +1,23 @@
+name: data-stack
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  ds-report:
+    runs-on: ubuntu-latest
+    env:
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements-analytics-stack.txt
+      - run: python analytics/quality/validate_sklearn_diabetes.py
+      - run: python modeling/baseline_compare.py
+      - run: python analytics/reports/build_report.py
+      - run: python tools/build_docs.py
